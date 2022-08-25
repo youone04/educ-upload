@@ -14,7 +14,7 @@ function UserHome() {
   const { data, loading, error } = getKursusBeliData.kursusBeli;
   useEffect(() => {
     dispatch(getKursusBeli(token));
-  }, [dispatch]);
+  }, [dispatch ,token]);
 
   return (
     <div>
@@ -41,6 +41,7 @@ function UserHome() {
                     className="text-decoration-none btn ml-1 text-white"
                     href={d.kursus.syllabus}
                     target="_blank"
+                    rel="noreferrer"
                     
                   >
                     Lihat Syllabus
