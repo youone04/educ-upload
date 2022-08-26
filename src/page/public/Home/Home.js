@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getKursusPublic } from "../../../redux/actions/actionKursusPublic/actionKursusPublic";
 import Card from "react-bootstrap/Card";
-import ModalPembayaran from "./ModalPembayaran";
 import { getToken } from "../../../redux/actions/actionLogin";
 import { getMetodePembayaran } from "../../../redux/actions/actionMetodePembayaran/actionMetodePembayaran";
 import numberWithCommas from "../../../func/numberWithCommas";
@@ -31,13 +30,6 @@ export default function Home() {
     dispatch(getMetodePembayaran());
   }, [dispatch]);
 
-  const [modalShow, setModalShow] = useState(false);
-  const [jadwal, setDataJadwal] = useState([]);
-
-  const handleShowButton = (data) => {
-    setModalShow(true);
-    setDataJadwal(data);
-  };
 
   return (
     <>
@@ -48,13 +40,6 @@ export default function Home() {
       ) : (
         <>
           <NavbarComp />
-          <ModalPembayaran
-            token={token}
-            jadwal={jadwal}
-            show={modalShow}
-            metode={dataMetodePembayaran}
-            onHide={() => setModalShow(false)}
-          />
           <Jumbotron/>
           <marquee><h6>Kursus di mentori secara daring, ayo tunggu apa lagi daftar sekarang diskon <span className="text-success">30%</span></h6></marquee>
           {/* <marquee><h4>Selamat pagi ,tetap mengeluh dan putus asa ya!</h4></marquee> */}
@@ -67,7 +52,7 @@ export default function Home() {
               {data.map((k, i) => {
                 return (
                  <Col lg={3}>
-                  <Card className="m-1 card-hover" key={i}>
+                  <Card className="m-1 card-hover card-item-cust" key={i}>
                     <Card.Img variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
@@ -96,7 +81,7 @@ export default function Home() {
               {data.map((k, i) => {
                 return (
                  <Col lg={3}>
-                  <Card className="m-1" key={i}>
+                  <Card className="m-1 card-item-cust" key={i}>
                     <Card.Img variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>

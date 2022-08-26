@@ -165,4 +165,7 @@ body {
   .tombol-beli-kursus{
     margin-top: 10px;
   }
+  .card-item-cust{
+    width:20em;
+  }
 }

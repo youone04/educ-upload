@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Link} from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import jwtDecode from 'jwt-decode';
 
 
@@ -15,9 +15,9 @@ function NavbarComp() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand  as={Link} to="/">IDN</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Brand className="m-1" as={Link} to="/">IDN</Navbar.Brand>
+        <Navbar.Toggle  className="m-1" aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse  className="m-2" id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#features">ABOUT</Nav.Link>
             <Nav.Link href="#pricing">KONTAK</Nav.Link>

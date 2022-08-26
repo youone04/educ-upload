@@ -83,7 +83,7 @@ function KursusDetail() {
               .map((k, i) => {
                 return (
                  <Col lg={3}>
-                  <Card className="m-1" key={i}>
+                  <Card className="m-1 card-item-cust" key={i}>
                     <Card.Img variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
