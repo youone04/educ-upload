@@ -15,7 +15,7 @@ function NavbarComp() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand className="m-1" as={Link} to="/">IDN</Navbar.Brand>
+        <Navbar.Brand className="m-1" as={Link} to="/">IDN ED</Navbar.Brand>
         <Navbar.Toggle  className="m-1" aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse  className="m-2" id="responsive-navbar-nav">
           <Nav className="me-auto">

@@ -7,7 +7,7 @@ function Footer() {
         <div className="row gy-4 gx-5d ">
          
           <div className="col-lg-4 col-md-6">
-            <h5 className="h1 text-white">FB.</h5>
+            <h5 className="h1 text-white">IDN ED</h5>
             <p className="small text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt.

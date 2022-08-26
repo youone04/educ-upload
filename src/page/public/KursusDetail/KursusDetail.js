@@ -78,12 +78,12 @@ function KursusDetail() {
               <h5>Kursus Terkait</h5>
               {/* <p style={{ marginLeft: "auto" }}>Lihat semua</p> */}
             </div>
-            <div className="row d-flex col-12">
+            <div className="row d-flex col-12 pl-3">
               {dataKursus.filter(data => data.id != id )
               .map((k, i) => {
                 return (
-                 <Col lg={3}>
-                  <Card className="m-1 card-item-cust" key={i}>
+                //  <Col lg={3}>
+                  <Card className=" col-sm-12 col-lg-3 m-1 card-item-cust" key={i}>
                     <Card.Img variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
@@ -95,7 +95,7 @@ function KursusDetail() {
                       </div>
                     </Card.Body>
                   </Card>
-                 </Col>
+                //  </Col>
                 );
               })
               }

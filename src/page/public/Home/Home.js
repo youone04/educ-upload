@@ -48,11 +48,11 @@ export default function Home() {
               <h5>Kursus terbaru</h5>
               <p style={{ marginLeft: "auto" }}>Lihat semua</p>
             </div>
-            <div className="row d-flex col-12">
+            <div className="row d-flex col-12 pl-4">
               {data.map((k, i) => {
                 return (
-                 <Col lg={3}>
-                  <Card className="m-1 card-hover card-item-cust" key={i}>
+                //  <Col lg={3}>
+                  <Card className="m-1 col-sm-12 col-lg-3 card-hover card-item-cust" key={i}>
                     <Card.Img variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
@@ -65,7 +65,7 @@ export default function Home() {
                       </div>
                     </Card.Body>
                   </Card>
-                 </Col>
+                //  </Col>
                 );
               })}
             </div>
@@ -77,11 +77,11 @@ export default function Home() {
               <h5>Kursus terlaris</h5>
               <p style={{ marginLeft: "auto" }}>Lihat semua</p>
             </div>
-            <div className="row d-flex col-12">
+            <div className="row d-flex col-12 pl-4">
               {data.map((k, i) => {
                 return (
-                 <Col lg={3}>
-                  <Card className="m-1 card-item-cust" key={i}>
+                //  <Col lg={3}>
+                  <Card className="m-1  col-sm-12 col-lg-3 card-item-cust" key={i}>
                     <Card.Img variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
@@ -93,7 +93,7 @@ export default function Home() {
                       </div>
                     </Card.Body>
                   </Card>
-                 </Col>
+                //  </Col>
                 );
               })}
             </div>
