@@ -54,6 +54,7 @@ function KursusDetail() {
 
   return (
     <>
+     <NavbarComp />
       {loading || loadingMetodePem||loadingKursus ? (
         <p>loading</p>
       ) : error || errorMetodePem || errorKursus? (
@@ -68,7 +69,6 @@ function KursusDetail() {
             metode={dataMetodePembayaran}
             onHide={() => setModalShow(false)}
           />
-          <NavbarComp />
           <CardKursusDetail 
           handleShowButton={handleShowButton}
           data={data}/>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Jumbotron() {
   return (
-    <div className="jumbotron text-white" style={{backgroundImage: `url('https://image.shutterstock.com/image-photo/workspace-office-desk-supplies-laptop-260nw-1364543876.jpg')`,backgroundRepeat:'no-repeat',backgroundSize:'cover', fontWeight:'bolder',fontFamily:'fantasy'}}>
+    <div className="jumbotron text-white mt-4" style={{backgroundImage: `url('https://image.shutterstock.com/image-photo/workspace-office-desk-supplies-laptop-260nw-1364543876.jpg')`,backgroundRepeat:'no-repeat',backgroundSize:'cover', fontWeight:'bolder',fontFamily:'fantasy'}}>
       <h1 className="display-6">Apa itu education IDN?</h1>
       <p className="lead text-keterangan">
         education IDN adalah sebuah platform pembelajaran atau tutorial yang

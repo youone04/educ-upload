@@ -13,7 +13,7 @@ function NavbarComp() {
 
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar style={{ position: 'fixed', zIndex: 1, width: '100%',top: 0}} collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand className="m-1" as={Link} to="/">IDN ED</Navbar.Brand>
         <Navbar.Toggle  className="m-1" aria-controls="responsive-navbar-nav" />
