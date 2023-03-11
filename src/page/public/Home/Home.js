@@ -7,7 +7,6 @@ import { getMetodePembayaran } from "../../../redux/actions/actionMetodePembayar
 import numberWithCommas from "../../../func/numberWithCommas";
 import NavbarComp from "../../../components/NavbarComp/NavbarComp";
 import {Link} from "react-router-dom";
-import {Col} from "react-bootstrap";
 import Jumbotron from "../../../components/Jumbotron/Jumbotron";
 import Footer from "../../../components/Footer/Footer";
 
@@ -43,61 +42,82 @@ export default function Home() {
           <Jumbotron/>
           <marquee><h6>Kursus di mentori secara daring, ayo tunggu apa lagi daftar sekarang diskon <span className="text-success">30%</span></h6></marquee>
           {/* <marquee><h4>Selamat pagi ,tetap mengeluh dan putus asa ya!</h4></marquee> */}
+        
           <div className="container mt-5">
+          <Card className="card-home">
             <div className="d-flex">
               <h5>Kursus terbaru</h5>
               <p style={{ marginLeft: "auto" }}>Lihat semua</p>
             </div>
-            <div className="row d-flex col-12 pl-4">
+            <div className="row col-12 pl-4">
               {data.map((k, i) => {
                 return (
-                //  <Col lg={3}>
-                  <Card className="m-1 col-sm-12 col-lg-3 card-hover card-item-cust" key={i}>
-                    <Card.Img variant="top" src={k.gambar} />
+                  <Card style={{ width: 330 }} className="mr-2 col-sm-12 col-lg-4 card-hover card-item-cust p-0" key={i}>
+                    <Card.Img height={170} variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
                       <Card.Text>{k.deskripsi.slice(0, 70)} . .</Card.Text>
+                      <div className="d-flex mt-3">
+                       <span className="badge"><i>Sertifikat</i></span>
+                       <span className="badge" style={{ background:'blue' }}><i>Online</i></span>
+                      </div>
                       <hr />
                       <h6 style={{textDecoration:'line-through',color:'gray'}}>Rp. {numberWithCommas(k.harga)}.-</h6>
-                      <div style={{opacity:'0.9'}} className="d-flex bg-dark rounded p-2">
+                      <div style={{opacity:'0.9', width:'100%'}}>
                       <h5>Rp. {numberWithCommas(k.harga)}.-</h5>
-                      <Link style={{marginLeft:'auto',textDecoration:'none'}} to={`/kursus/${k.id}`}>Detail</Link>
+                      <div className="button-detail">
+                        <Link style={{marginLeft:'auto',textDecoration:'none',color:'white'}} to={`/kursus/${k.id}`}>Lihat Detail Kelas</Link>
+                      </div>
                       </div>
                     </Card.Body>
                   </Card>
-                //  </Col>
                 );
               })}
             </div>
-            <hr/>
+            </Card>
           </div>
 
           <div className="container mt-5">
+          <Card className="card-home">
             <div className="d-flex">
               <h5>Kursus terlaris</h5>
               <p style={{ marginLeft: "auto" }}>Lihat semua</p>
             </div>
-            <div className="row d-flex col-12 pl-4">
+            <div className="row col-12 pl-4">
               {data.map((k, i) => {
                 return (
-                //  <Col lg={3}>
-                  <Card className="m-1  col-sm-12 col-lg-3 card-item-cust" key={i}>
-                    <Card.Img variant="top" src={k.gambar} />
+                  <Card style={{ width: 330 }} className="mr-2 col-sm-12 col-lg-4 card-hover card-item-cust p-0" key={i}>
+                    <Card.Img height={170} variant="top" src={k.gambar} />
                     <Card.Body>
                       <Card.Title>{k.judul}</Card.Title>
-                      <Card.Text>{k.deskripsi.slice(0, 100)} . .</Card.Text>
+                      <Card.Text>{k.deskripsi.slice(0, 70)} . .</Card.Text>
+                      <div className="d-flex mt-3">
+                       <span className="badge"><i>Sertifikat</i></span>
+                       <span className="badge" style={{ background:'blue' }}><i>Online</i></span>
+                      </div>
                       <hr />
-                      <div className="d-flex">
+                      <h6 style={{textDecoration:'line-through',color:'gray'}}>Rp. {numberWithCommas(k.harga)}.-</h6>
+                      <div style={{opacity:'0.9', width:'100%'}}>
                       <h5>Rp. {numberWithCommas(k.harga)}.-</h5>
-                      <Link style={{marginLeft:'auto',textDecoration:'none'}} to={`/kursus/${k.id}`}>Detail</Link>
+                      <div className="button-detail">
+                        <Link style={{marginLeft:'auto',textDecoration:'none',color:'white'}} to={`/kursus/${k.id}`}>Lihat Detail Kelas</Link>
+                      </div>
                       </div>
                     </Card.Body>
                   </Card>
-                //  </Col>
                 );
               })}
             </div>
+            </Card>
           </div>
+          
+
+          <div className="container mt-5">
+          <div style={{ background:'black', width: "100%" , height: 300,borderRadius: 18 }}>
+          </div>
+          </div>
+
+
           <Footer/>
         </>
       )}

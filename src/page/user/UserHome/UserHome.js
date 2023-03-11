@@ -31,8 +31,8 @@ function UserHome() {
         <div className="d-flex mt-3 row">
           {data.map((d, i) => {
             return (
-              <Card className="m-1 card-hover col-sm-12 col-lg-4 mt-3" key={i}>
-                <Card.Img variant="top" src={d.kursus.gambar} />
+              <Card className="m-1 card-hover col-sm-12 col-lg-4 mt-3 p-0" key={i}>
+                <Card.Img height={200} variant="top" src={d.kursus.gambar} />
                 <Card.Body>
                   <Card.Title>{d.kursus.judul}</Card.Title>
                   <Card.Text>{d.kursus.deskripsi.slice(0, 80)}</Card.Text>
