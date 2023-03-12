@@ -21,10 +21,10 @@ const responsive = {
       items: 1,
     },
   };
-function HomeCarousel() {
+function HomeCarousel({up}) {
 
   return (
-    <div className="container mt-5">
+    <div className={'container mt-5'}>
       <Carousel 
       autoPlay={true} 
       infinite={true} 

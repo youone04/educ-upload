@@ -10,10 +10,9 @@ import { getMetodePembayaran } from "../../../redux/actions/actionMetodePembayar
 import Footer from "../../../components/Footer/Footer";
 import { getKursusPublic } from "../../../redux/actions/actionKursusPublic/actionKursusPublic";
 import Card from "react-bootstrap/Card";
-import {Col} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import { Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import numberWithCommas from "../../../func/numberWithCommas";
-
 
 function KursusDetail() {
   const { id } = useParams();
@@ -22,7 +21,7 @@ function KursusDetail() {
     (state) => state.dataDetailKursusPublic
   );
   const { data, loading, error } = getDataDetailKursus.detailKursusPublic;
-  
+
   const getDataLogin = useSelector((state) => state.login);
   const { token } = getDataLogin.login;
 
@@ -34,7 +33,11 @@ function KursusDetail() {
   } = getMetodePem.metodePembayaran;
 
   const getKursusPublicData = useSelector((state) => state.dataKursusPublic);
-  const { data:dataKursus, loading:loadingKursus, error:errorKursus } = getKursusPublicData.kursusPublic;
+  const {
+    data: dataKursus,
+    loading: loadingKursus,
+    error: errorKursus,
+  } = getKursusPublicData.kursusPublic;
 
   const [modalShow, setModalShow] = useState(false);
   const [jadwal, setDataJadwal] = useState([]);
@@ -44,24 +47,23 @@ function KursusDetail() {
     dispatch(getToken());
     dispatch(getKursusPublic());
     dispatch(getMetodePembayaran());
-  }, [dispatch,id]);
+  }, [dispatch, id]);
 
   const handleShowButton = (data) => {
     setModalShow(true);
     setDataJadwal(data);
   };
 
-
   return (
     <>
-     <NavbarComp />
-      {loading || loadingMetodePem||loadingKursus ? (
+      <NavbarComp />
+      {loading || loadingMetodePem || loadingKursus ? (
         <p>loading</p>
-      ) : error || errorMetodePem || errorKursus? (
+      ) : error || errorMetodePem || errorKursus ? (
         <p>{error || errorMetodePem || errorKursus}</p>
       ) : (
         <>
-         <ModalPembayaran
+          <ModalPembayaran
             token={token}
             jadwal={jadwal}
             show={modalShow}
@@ -69,40 +71,75 @@ function KursusDetail() {
             metode={dataMetodePembayaran}
             onHide={() => setModalShow(false)}
           />
-          <CardKursusDetail 
-          handleShowButton={handleShowButton}
-          data={data}/>
+          <CardKursusDetail handleShowButton={handleShowButton} data={data} />
 
           <div className="container mt-5">
-            <div className="d-flex">
-              <h5>Kursus Terkait</h5>
-              {/* <p style={{ marginLeft: "auto" }}>Lihat semua</p> */}
-            </div>
-            <div className="row d-flex col-12 pl-3">
-              {dataKursus.filter(data => data.id != id )
-              .map((k, i) => {
-                return (
-                //  <Col lg={3}>
-                  <Card className=" col-sm-12 col-lg-3 m-1 card-item-cust p-0" key={i}>
-                    <Card.Img height={200} variant="top" src={k.gambar} />
-                    <Card.Body>
-                      <Card.Title>{k.judul}</Card.Title>
-                      <Card.Text>{k.deskripsi.slice(0, 100)} . .</Card.Text>
-                      <hr />
-                      <div className="d-flex">
-                      <h5>Rp. {numberWithCommas(k.harga)}.-</h5>
-                      <Link style={{marginLeft:'auto',textDecoration:'none'}} to={`/kursus/${k.id}`}>Detail</Link>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                //  </Col>
-                );
-              })
-              }
-            </div>
+            <Card className="card-home">
+              <div className="d-flex">
+                <h5>Kursus terbaru</h5>
+              </div>
+              <div className="row col-12 pl-4">
+                {dataKursus.filter(d => d.id != id).map((k, i) => {
+                  return (
+                    <Card
+                      style={{ width: 330 }}
+                      className="mr-2 col-sm-12 col-lg-4 card-hover card-item-cust p-0"
+                      key={i}
+                    >
+                      <Card.Img height={170} variant="top" src={k.gambar} />
+                      <Card.Body>
+                        <Card.Title>{k.judul}</Card.Title>
+                        <Card.Text>{k.deskripsi.slice(0, 70)} . .</Card.Text>
+                        <div className="d-flex mt-3">
+                          <span className="badge">
+                            <i>Sertifikat</i>
+                          </span>
+                          <span
+                            className="badge"
+                            style={{ background: "blue" }}
+                          >
+                            <i>Online</i>
+                          </span>
+                          <span
+                            className="badge"
+                            style={{ background: "green" }}
+                          >
+                            <i>Mentor</i>
+                          </span>
+                        </div>
+                        <hr />
+                        <h6
+                          style={{
+                            textDecoration: "line-through",
+                            color: "gray",
+                          }}
+                        >
+                          Rp. {numberWithCommas(k.harga)}.-
+                        </h6>
+                        <div style={{ opacity: "0.9", width: "100%" }}>
+                          <h5>Rp. {numberWithCommas(k.harga)}.-</h5>
+                          <div className="button-detail">
+                            <Link
+                              style={{
+                                marginLeft: "auto",
+                                textDecoration: "none",
+                                color: "white",
+                              }}
+                              to={`/kursus/${k.id}`}
+                            >
+                              Lihat Detail Kelas
+                            </Link>
+                          </div>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  );
+                })}
+              </div>
+            </Card>
           </div>
 
-          <Footer/>
+          <Footer />
         </>
       )}
     </>

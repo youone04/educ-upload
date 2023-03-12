@@ -187,7 +187,7 @@ body {
   text-align: center;
 }
 .card-home{
-  padding : 30px
+  padding : 30px;
 }
 .badge{
   background-color: rgb(216, 22, 22);
@@ -214,7 +214,7 @@ body {
     margin-top: 15px;
   }
   .card-home{
-    padding : 13px
+    padding : 13px;
   }
   .carousel-css{
     background-size: contain !important;

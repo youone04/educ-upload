@@ -13,14 +13,18 @@ function NavbarComp() {
 
 
   return (
-    <Navbar style={{ position: 'fixed', zIndex: 1, width: '100%',top: 0}} collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" style={{
+      position: 'fixed', 
+      zIndex: 1, 
+      width: '100%',
+      top: 0}} collapseOnSelect expand="lg">
       <Container>
-        <Navbar.Brand className="m-1" as={Link} to="/">IDN ED</Navbar.Brand>
+        <Navbar.Brand className="m-1" as={Link} to="/"><b>IDN ED</b></Navbar.Brand>
         <Navbar.Toggle  className="m-1" aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse  className="m-2" id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">ABOUT</Nav.Link>
-            <Nav.Link href="#pricing">KONTAK</Nav.Link>
+            <Nav.Link href="#features"><b>ABOUT</b></Nav.Link>
+            <Nav.Link href="#pricing"><b>KONTAK</b></Nav.Link>
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
