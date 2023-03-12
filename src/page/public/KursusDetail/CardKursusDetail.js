@@ -12,11 +12,11 @@ function CardKursusDetail(props) {
         {Array.from({ length: 1 }).map((_, idx) => (
           <Col key={idx}>
             <Card>
-              <div className="d-flex col-12 row">
+              <div className="row col-12">
                 <div className="col-sm-12 col-lg-6">
                   <Card.Img
                     style={{ width: "100%", margin: 8 }}
-                    variant="top"
+                    variant="left"
                     src={props.data.gambar}
                   />
                   <div className="d-flex mt-3 mb-3">
@@ -31,7 +31,8 @@ function CardKursusDetail(props) {
                     </span>
                   </div>
                 </div>
-                <div className="col-lg-6 col-sm-12">
+
+                <div className="col-sm-12 col-lg-6 ">
                   <Card.Body>
                     <Card.Title>{props.data.judul}</Card.Title>
                     <Card.Text>

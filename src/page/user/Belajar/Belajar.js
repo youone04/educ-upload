@@ -33,7 +33,7 @@ function Belajar() {
           <div className="p-1 mb-3">
           <h2 className="ml-2">Belajar</h2>
           </div>
-          <div className="d-flex row">
+          <div className="row">
             <Card className="col-sm-12 col-lg-5">
               <Card.Img variant="top mt-2" src={data.kursus.gambar} />
               <Card.Body>

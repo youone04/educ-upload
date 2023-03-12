@@ -76,7 +76,7 @@ function KursusDetail() {
           <div className="container mt-5">
             <Card className="card-home">
               <div className="d-flex">
-                <h5>Kursus terbaru</h5>
+                <h5>Kursus terkait</h5>
               </div>
               <div className="row col-12 pl-4">
                 {dataKursus.filter(d => d.id != id).map((k, i) => {
