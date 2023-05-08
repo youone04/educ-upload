@@ -18,6 +18,9 @@ import PendapatanPengajar from "./page/admin/PendapatanPengajar/PendapatanPengaj
 import KursusDetail from "./page/public/KursusDetail/KursusDetail";
 import Sertifikat from "./page/user/Sertifikat/Sertifikat";
 // import "./index.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ROLES = {
   Root: "root",
@@ -27,6 +30,10 @@ const ROLES = {
 };
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Routes>

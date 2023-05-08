@@ -24,7 +24,7 @@ const responsive = {
 function HomeCarousel({up}) {
 
   return (
-    <div className={'container mt-5'}>
+    <div data-aos="zoom-in" className={'container mt-5'}>
       <Carousel 
       autoPlay={true} 
       infinite={true} 

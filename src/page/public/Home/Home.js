@@ -58,6 +58,7 @@ export default function Home() {
                 {data.map((k, i) => {
                   return (
                     <Card
+                      data-aos="zoom-in"
                       style={{ width: 330 }}
                       className="mr-2 col-sm-12 col-lg-4 card-hover card-item-cust p-0"
                       key={i}
@@ -125,6 +126,7 @@ export default function Home() {
                 {data.map((k, i) => {
                   return (
                     <Card
+                    data-aos="zoom-in"
                       style={{ width: 330 }}
                       className="mr-2 col-sm-12 col-lg-4 card-hover card-item-cust p-0"
                       key={i}
